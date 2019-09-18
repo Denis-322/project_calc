@@ -3,43 +3,35 @@ import Numbers from './components/Numbers';
 import Res from "./components/Res";
 class App extends Component {
     state = {
-        result:''
+        result: ''
     };
-    buttonPressed(buttonName) {
+    buttonPressed(buttonName, value1, value2) {
         if (buttonName === 'plus') {
-            let num1 = document.getElementById("nm1").value;
-            num1 = parseInt(num1);
-            let num2 = document.getElementById("nm2").value;
-            num2 = parseInt(num2);
-            var result = num1 + num2;
+            let numeral1 = parseInt(value1);
+            let numeral2 = parseInt(value2);
+            var result = parseInt(numeral1 + numeral2);
             document.getElementById("otvet").innerHTML = result;
-            
-        } else if (buttonName === 'minus') 
-        { let num1 = document.getElementById("nm1").value;
-            num1 = parseInt(num1);
-            let num2 = document.getElementById("nm2").value;
-            num2 = parseInt(num2);
-            var result = num1 - num2;
+
+        } else if (buttonName === 'minus') {
+            let numeral1 = parseInt(value1);
+            let numeral2 = parseInt(value2);
+            var result = parseInt(numeral1 - numeral2);
             document.getElementById("otvet").innerHTML = result;
-        
-        } else if (buttonName === 'umnozhenie') 
-        { let num1 = document.getElementById("nm1").value;
-            num1 = parseInt(num1);
-            let num2 = document.getElementById("nm2").value;
-            num2 = parseInt(num2);
-            var result = num1 * num2;
+
+        } else if (buttonName === 'umnozhenie') {
+            let numeral1 = parseInt(value1);
+            let numeral2 = parseInt(value2);
+            var result = parseInt(numeral1 * numeral2);
             document.getElementById("otvet").innerHTML = result;
-        
-        } else if (buttonName === 'delenie') 
-        { let num1 = document.getElementById("nm1").value;
-            num1 = parseInt(num1);
-            let num2 = document.getElementById("nm2").value;
-            num2 = parseInt(num2);
-            var result = num1 / num2;
+
+        } else if (buttonName === 'delenie') {
+            let numeral1 = parseInt(value1);
+            let numeral2 = parseInt(value2);
+            var result = parseInt(numeral1 / numeral2);
             document.getElementById("otvet").innerHTML = result;
-        
+
         }
-        return result;
+        return (result);
     }
     render() {
         return (
