@@ -7,37 +7,36 @@ class App extends Component {
     };
     buttonPressed(buttonName, value1, value2) {
         if (buttonName === 'plus') {
-            let numeral1 = parseInt(value1);
-            let numeral2 = parseInt(value2);
-            var result = parseInt(numeral1 + numeral2);
-            document.getElementById("otvet").innerHTML = result;
+            let numeral1 = parseFloat(value1);
+            let numeral2 = parseFloat(value2);
+            let result1 = parseFloat(numeral1 + numeral2);
+            return (result1)
 
         } else if (buttonName === 'minus') {
-            let numeral1 = parseInt(value1);
-            let numeral2 = parseInt(value2);
-            var result = parseInt(numeral1 - numeral2);
-            document.getElementById("otvet").innerHTML = result;
+            let numeral1 = parseFloat(value1);
+            let numeral2 = parseFloat(value2);
+            let result1 = parseFloat(numeral1 - numeral2);
+            return (result1)
 
         } else if (buttonName === 'umnozhenie') {
-            let numeral1 = parseInt(value1);
-            let numeral2 = parseInt(value2);
-            var result = parseInt(numeral1 * numeral2);
-            document.getElementById("otvet").innerHTML = result;
+            let numeral1 = parseFloat(value1);
+            let numeral2 = parseFloat(value2);
+            let result1 = parseFloat(numeral1 * numeral2);
+            return (result1)
 
         } else if (buttonName === 'delenie') {
-            let numeral1 = parseInt(value1);
-            let numeral2 = parseInt(value2);
-            var result = parseInt(numeral1 / numeral2);
-            document.getElementById("otvet").innerHTML = result;
-
+            let numeral1 = parseFloat(value1);
+            let numeral2 = parseFloat(value2);
+            let result1 = parseFloat(numeral1 / numeral2);
+            return (result1)
         }
-        return (result);
+        
     }
     render() {
         return (
             <div className="App">
                 <Numbers buttonPressed={this.buttonPressed} />
-                <Res id='otvet' result={this.state.result} />
+                <Res result={this.state.result1} />
             </div>
         )
     }

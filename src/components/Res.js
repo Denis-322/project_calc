@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 export default class Res extends Component{
     render(){
-        let {result} =(this.props.result);
       return(
-          <div className="result">
-              <p id="otvet">{result}</p>
+          <div className="result1">
+              <p >{this.props.result1}</p>
               
           </div>
       );
