@@ -4,27 +4,27 @@ export default class Numbers extends Component {
     buttonPressed = e => {
         this.props.buttonPressed(e.target.name);
     }
-    constructor(props) {
+    handleChange(event) {
+        this.setState({ value: event.target.value });
+        }
+    handleChange2(event) {
+        this.setState({ value2: event.target.value });
+        }
+    constructor(props)
+     {
         super(props);
-        this.state = { value: '' };
-
+        this.state = {value: '',value2:''};
+         
         this.handleChange = this.handleChange.bind(this);
-        
-    }
-    handleChange(event,value1,value2) {
-        this.setState({ value: event.target.value1 });
-        parseFloat(value1);
-        this.setState({ value: event.target.value2 });
-        parseFloat(value2);
-        
-    }
+        this.handleChange2 = this.handleChange2.bind(this);
 
-
+        
+        }
     render() {
         return (
             <div>
-                <p>Первое число: <input type="number" value={this.state.value1} onChange={this.handleChange} /></p>
-                <p>Второе число: <input type="number" value={this.state.value2} onChange={this.handleChange} /></p>
+                <p>Первое число: <input type="number" value={this.state.value} onChange={this.handleChange} /></p>
+                <p>Второе число: <input type="number" value={this.state.value2} onChange={this.handleChange2} /></p>
                 <button name="plus" onClick={this.buttonPressed}>Сложить </button>
                 <button name="minus" onClick={this.buttonPressed}>Вычесть </button>
                 <button name="umnozhenie" onClick={this.buttonPressed}>Умножить </button>
